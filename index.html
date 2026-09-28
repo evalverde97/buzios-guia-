@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Conocé Grupo Búzios y Aurya IA: turismo, gastronomía, hospedaje y oportunidades para tu negocio en Búzios.">
+<meta name="theme-color" content="#080C14">
+<title>Grupo Búzios · Aurya IA</title>
+<style>
+/* ── RESET & BASE ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold:   #C9A84C;
+  --gold2:  #F0D080;
+  --dark:   #080C14;
+  --dark2:  #0D1520;
+  --blue:   #0A3D62;
+  --text:   #E8E0D0;
+  --muted:  #8899AA;
+  --white:  #FFFFFF;
+  --radius: 16px;
+  --font:   'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--dark);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ───────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark2); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ── NAV ─────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 48px;
+  background: linear-gradient(to bottom, rgba(8,12,20,0.95) 0%, transparent 100%);
+  backdrop-filter: blur(4px);
+}
+.nav-logo {
+  font-size: 22px; font-weight: 800; letter-spacing: 2px; color: var(--gold);
+  text-transform: uppercase;
+}
+.nav-logo span { color: var(--white); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  color: var(--text); text-decoration: none; font-size: 14px;
+  letter-spacing: 1px; text-transform: uppercase; opacity: 0.8;
+  transition: opacity .2s, color .2s;
+}
+.nav-links a:hover { opacity: 1; color: var(--gold); }
+.nav-cta {
+  background: var(--gold); color: var(--dark); font-weight: 700;
+  padding: 10px 24px; border-radius: 50px; text-decoration: none;
+  font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
+  transition: background .2s, transform .2s;
+}
+.nav-cta:hover { background: var(--gold2); transform: scale(1.04); }
+
+/* ── HERO ────────────────────────────────────── */
+#hero {
+  position: relative; height: 100vh; min-height: 600px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('91306584868d.jpg') center center / cover no-repeat;
+  transform: scale(1.05);
+  animation: zoomin 18s ease-in-out infinite alternate;
+}
+@keyframes zoomin { from { transform: scale(1.05); } to { transform: scale(1.12); } }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(8,12,20,0.82) 0%,
+    rgba(10,61,98,0.55) 50%,
+    rgba(8,12,20,0.90) 100%
+  );
+}
+.hero-content {
+  position: relative; z-index: 2; text-align: center; padding: 0 24px;
+  animation: fadeup 1s ease both;
+}
+@keyframes fadeup { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+.hero-eyebrow {
+  display: inline-block;
+  background: rgba(201,168,76,0.18); border: 1px solid var(--gold);
+  color: var(--gold); font-size: 12px; letter-spacing: 3px;
+  text-transform: uppercase; padding: 6px 18px; border-radius: 50px;
+  margin-bottom: 24px;
+}
+.hero-title {
+  font-size: clamp(48px, 8vw, 96px); font-weight: 900;
+  line-height: 1; letter-spacing: -2px;
+  color: var(--white);
+}
+.hero-title .gold { color: var(--gold); }
+.hero-subtitle {
+  margin-top: 20px; font-size: clamp(16px, 2vw, 22px);
+  color: var(--text); opacity: 0.85; max-width: 580px; margin-left: auto; margin-right: auto;
+  line-height: 1.6;
+}
+.hero-btns {
+  margin-top: 40px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+}
+.btn-primary {
+  background: var(--gold); color: var(--dark); font-weight: 700;
+  padding: 16px 36px; border-radius: 50px; text-decoration: none;
+  font-size: 15px; letter-spacing: 1px; text-transform: uppercase;
+  box-shadow: 0 8px 32px rgba(201,168,76,0.4);
+  transition: all .25s;
+}
+.btn-primary:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.5); }
+.btn-secondary {
+  background: transparent; color: var(--white); font-weight: 600;
+  padding: 16px 36px; border-radius: 50px; text-decoration: none;
+  font-size: 15px; border: 1.5px solid rgba(255,255,255,0.3);
+  transition: all .25s;
+}
+.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+.hero-stats {
+  position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 48px; z-index: 2;
+}
+.stat { text-align: center; }
+.stat-num { font-size: 32px; font-weight: 800; color: var(--gold); }
+.stat-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.6; }
+.scroll-hint {
+  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+  color: var(--gold); font-size: 22px; animation: bounce 2s infinite;
+  z-index: 2;
+}
+@keyframes bounce { 0%,100%{ transform: translateX(-50%) translateY(0); } 50%{ transform: translateX(-50%) translateY(8px); } }
+
+/* ── AURYA SECTION ───────────────────────────── */
+#aurya {
+  padding: 100px 48px;
+  background: linear-gradient(135deg, var(--dark2) 0%, #0A1A2E 100%);
+  position: relative; overflow: hidden;
+}
+#aurya::before {
+  content: 'AURYA';
+  position: absolute; font-size: 220px; font-weight: 900;
+  color: rgba(201,168,76,0.04); top: 50%; left: 50%;
+  transform: translate(-50%,-50%); letter-spacing: 20px; pointer-events: none;
+}
+.aurya-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.aurya-phone {
+  position: relative; display: flex; justify-content: center;
+}
+.phone-frame {
+  width: 260px; height: 520px; border-radius: 40px;
+  border: 3px solid rgba(201,168,76,0.5);
+  background: linear-gradient(160deg, #0D1A2A 0%, #061020 100%);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(201,168,76,0.15);
+  overflow: hidden; position: relative;
+  display: flex; flex-direction: column;
+}
+.phone-notch {
+  width: 80px; height: 20px; background: var(--dark); border-radius: 0 0 14px 14px;
+  margin: 0 auto 0;
+}
+.phone-screen {
+  flex: 1; padding: 16px 14px; overflow: hidden;
+  background: url('87ac0dc90649.jpg') center / cover;
+  position: relative;
+}
+.phone-screen-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(8,12,20,0.7) 0%, rgba(8,12,20,0.4) 50%, rgba(8,12,20,0.85) 100%);
+}
+.chat-bubbles { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.bubble {
+  max-width: 80%; padding: 10px 14px; border-radius: 16px;
+  font-size: 11px; line-height: 1.5;
+}
+.bubble.user {
+  align-self: flex-end;
+  background: var(--gold); color: var(--dark); font-weight: 600;
+  border-radius: 16px 16px 4px 16px;
+}
+.bubble.aurya {
+  align-self: flex-start;
+  background: rgba(255,255,255,0.12); color: var(--white);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px 16px 16px 4px;
+  backdrop-filter: blur(8px);
+}
+.bubble.aurya .aurya-name { color: var(--gold); font-weight: 700; font-size: 10px; margin-bottom: 4px; }
+.phone-bottom {
+  padding: 12px 14px; background: rgba(8,12,20,0.9);
+  border-top: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; gap: 8px;
+}
+.phone-input {
+  flex: 1; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 8px 12px; font-size: 10px; color: var(--muted);
+}
+.phone-send {
+  width: 28px; height: 28px; background: var(--gold); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 12px;
+}
+.glow-ring {
+  position: absolute; width: 320px; height: 600px; border-radius: 50px;
+  border: 1px solid rgba(201,168,76,0.15);
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  animation: pulse-ring 3s ease-in-out infinite;
+}
+@keyframes pulse-ring { 0%,100%{ opacity:0.5; transform:translate(-50%,-50%) scale(1); } 50%{ opacity:1; transform:translate(-50%,-50%) scale(1.05); } }
+
+.aurya-text { }
+.section-eyebrow {
+  display: inline-block;
+  color: var(--gold); font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; margin-bottom: 16px;
+  border-bottom: 1px solid var(--gold); padding-bottom: 6px;
+}
+.section-title {
+  font-size: clamp(32px, 4vw, 52px); font-weight: 800; color: var(--white);
+  line-height: 1.15; margin-bottom: 20px;
+}
+.section-title .gold { color: var(--gold); }
+.section-desc {
+  font-size: 16px; line-height: 1.8; color: var(--muted); margin-bottom: 32px;
+}
+.feature-list { display: flex; flex-direction: column; gap: 16px; }
+.feature-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 16px; transition: all .2s;
+}
+.feature-item:hover {
+  background: rgba(201,168,76,0.07); border-color: rgba(201,168,76,0.25);
+  transform: translateX(4px);
+}
+.feature-icon { font-size: 24px; flex-shrink: 0; }
+.feature-text h4 { color: var(--white); font-size: 14px; margin-bottom: 4px; }
+.feature-text p { color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+/* ── CATEGORÍAS ──────────────────────────────── */
+#categorias {
+  padding: 100px 48px;
+  background: var(--dark);
+}
+.section-header { text-align: center; margin-bottom: 60px; }
+.cat-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px;
+}
+.cat-card {
+  position: relative; border-radius: 20px; overflow: hidden;
+  height: 200px; cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+}
+.cat-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+.cat-card img-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+}
+.cat-card .cat-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  transition: transform .4s;
+}
+.cat-card:hover .cat-bg { transform: scale(1.1); }
+.cat-card .cat-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(8,12,20,0.9) 0%, rgba(8,12,20,0.2) 100%);
+}
+.cat-card .cat-content {
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 16px;
+}
+.cat-card .cat-icon { font-size: 28px; margin-bottom: 6px; }
+.cat-card .cat-name { font-size: 15px; font-weight: 700; color: var(--white); }
+.cat-card .cat-count { font-size: 11px; color: var(--gold); margin-top: 2px; }
+.cat-card .cat-badge {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--gold); color: var(--dark); font-size: 9px; font-weight: 800;
+  padding: 3px 8px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase;
+}
+
+/* ── CÓMO FUNCIONA ───────────────────────────── */
+#como {
+  padding: 100px 48px;
+  background: linear-gradient(135deg, #0A1A2E 0%, var(--dark2) 100%);
+  position: relative; overflow: hidden;
+}
+.como-bg {
+  position: absolute; inset: 0; opacity: 0.07;
+  background: url('0bb27d1d82cd.jpg') center / cover;
+}
+.como-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-top: 60px; }
+.step {
+  text-align: center; padding: 32px 24px;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px; position: relative;
+  transition: all .3s;
+}
+.step:hover {
+  background: rgba(201,168,76,0.07); border-color: rgba(201,168,76,0.3);
+  transform: translateY(-6px);
+}
+.step-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--dark); font-size: 22px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 24px rgba(201,168,76,0.4);
+}
+.step-icon { font-size: 32px; margin-bottom: 12px; }
+.step h3 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.step p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.step-connector {
+  position: absolute; top: 50%; right: -20px;
+  font-size: 20px; color: var(--gold); opacity: 0.4;
+  transform: translateY(-50%);
+}
+
+/* ── BENEFICIOS PARA NEGOCIOS ────────────────── */
+#negocios {
+  padding: 100px 48px;
+  background: var(--dark);
+}
+.negocios-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.negocio-img {
+  border-radius: 24px; overflow: hidden; position: relative;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+}
+.negocio-img img {
+  width: 100%; height: 420px; object-fit: cover;
+  filter: brightness(0.85);
+}
+.negocio-img .img-badge {
+  position: absolute; bottom: 24px; left: 24px; right: 24px;
+  background: rgba(8,12,20,0.88); border: 1px solid rgba(201,168,76,0.3);
+  backdrop-filter: blur(12px); border-radius: 14px; padding: 16px 20px;
+  display: flex; align-items: center; gap: 14px;
+}
+.img-badge-icon { font-size: 28px; }
+.img-badge-text h4 { color: var(--gold); font-size: 15px; margin-bottom: 2px; }
+.img-badge-text p { color: var(--muted); font-size: 12px; }
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.benefit-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px; padding: 20px; transition: all .25s;
+}
+.benefit-card:hover {
+  background: rgba(201,168,76,0.07); border-color: rgba(201,168,76,0.25);
+}
+.benefit-card .b-icon { font-size: 26px; margin-bottom: 10px; }
+.benefit-card h4 { color: var(--white); font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.benefit-card p { color: var(--muted); font-size: 11px; line-height: 1.5; }
+
+/* ── PLANES ──────────────────────────────────── */
+#planes {
+  padding: 100px 48px;
+  background: linear-gradient(180deg, #0A1A2E 0%, var(--dark) 100%);
+}
+.planes-grid {
+  max-width: 960px; margin: 60px auto 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.plan-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px; padding: 36px 28px; position: relative;
+  transition: all .3s;
+}
+.plan-card:hover { transform: translateY(-8px); }
+.plan-card.featured {
+  background: linear-gradient(160deg, rgba(201,168,76,0.12) 0%, rgba(10,61,98,0.2) 100%);
+  border-color: rgba(201,168,76,0.5);
+  box-shadow: 0 0 60px rgba(201,168,76,0.15);
+}
+.plan-tag {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--gold); color: var(--dark); font-size: 11px; font-weight: 800;
+  padding: 5px 16px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase;
+  white-space: nowrap;
+}
+.plan-name { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.plan-price { font-size: 42px; font-weight: 900; color: var(--white); margin-bottom: 4px; }
+.plan-price span { font-size: 16px; font-weight: 400; color: var(--muted); }
+.plan-desc { font-size: 13px; color: var(--muted); margin-bottom: 28px; line-height: 1.5; }
+.plan-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.plan-features li { font-size: 13px; color: var(--text); display: flex; align-items: center; gap: 10px; }
+.plan-features li::before { content: '✓'; color: var(--gold); font-weight: 800; flex-shrink: 0; }
+.plan-features li.off { color: var(--muted); opacity: 0.5; }
+.plan-features li.off::before { content: '✕'; color: #555; }
+.btn-plan {
+  display: block; text-align: center; padding: 14px;
+  border-radius: 50px; text-decoration: none; font-size: 13px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase; transition: all .25s;
+}
+.btn-plan.gold { background: var(--gold); color: var(--dark); }
+.btn-plan.gold:hover { background: var(--gold2); transform: scale(1.03); }
+.btn-plan.outline { border: 1.5px solid rgba(255,255,255,0.2); color: var(--text); }
+.btn-plan.outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── REVISTA FÍSICA ──────────────────────────── */
+#revista {
+  padding: 100px 48px;
+  background: var(--dark);
+  position: relative; overflow: hidden;
+}
+.revista-bg {
+  position: absolute; inset: 0; opacity: 0.06;
+  background: url('5da22e97801c.jpg') center / cover;
+}
+.revista-inner {
+  max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.revista-mockup {
+  display: flex; justify-content: center; gap: 20px; perspective: 1000px;
+}
+.mag-cover {
+  width: 160px; height: 220px; border-radius: 8px;
+  background: linear-gradient(160deg, #0A2540 0%, #061020 100%);
+  border: 1px solid rgba(201,168,76,0.3);
+  box-shadow: 12px 12px 40px rgba(0,0,0,0.6);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  font-size: 11px; color: var(--gold); text-align: center; padding: 16px;
+  transform: rotateY(-8deg) rotateX(4deg);
+  background-image: url('ddbe59345921.jpg');
+  background-size: cover; background-position: center; position: relative;
+}
+.mag-cover::after {
+  content: ''; position: absolute; inset: 0; border-radius: 8px;
+  background: linear-gradient(to bottom, rgba(8,12,20,0.5) 0%, rgba(8,12,20,0.75) 100%);
+}
+.mag-cover-text { position: relative; z-index: 1; }
+.mag-cover-text h3 { font-size: 13px; font-weight: 800; color: var(--gold); letter-spacing: 2px; }
+.mag-cover-text p { font-size: 9px; color: var(--white); opacity: 0.7; margin-top: 4px; }
+.mag-inner {
+  width: 140px; height: 200px; border-radius: 6px;
+  background: linear-gradient(180deg, #0F2030 0%, #07111C 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 8px 8px 30px rgba(0,0,0,0.5);
+  display: flex; flex-direction: column; padding: 12px 10px; gap: 6px;
+  transform: rotateY(4deg) rotateX(4deg);
+  align-self: flex-end;
+}
+.mag-line { height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; }
+.mag-line.gold { background: rgba(201,168,76,0.3); width: 60%; }
+.mag-line.short { width: 70%; }
+.mag-box { height: 50px; background: rgba(255,255,255,0.05); border-radius: 4px; margin: 4px 0; }
+
+/* ── CTA FINAL ───────────────────────────────── */
+#cta {
+  padding: 120px 48px;
+  background: linear-gradient(135deg, #0A1A2E 0%, #061020 100%);
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-bg {
+  position: absolute; inset: 0; opacity: 0.12;
+  background: url('99f4508d267e.jpg') center / cover;
+}
+.cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.cta-title { font-size: clamp(36px, 5vw, 64px); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+.cta-title .gold { color: var(--gold); }
+.cta-desc { font-size: 18px; color: var(--muted); margin-bottom: 48px; line-height: 1.7; }
+.cta-contact { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 48px; }
+.contact-item { display: flex; align-items: center; gap: 10px; }
+.contact-icon { font-size: 22px; }
+.contact-text { font-size: 14px; color: var(--text); }
+.contact-text strong { color: var(--gold); }
+
+/* ── FOOTER ──────────────────────────────────── */
+footer {
+  background: #040810; padding: 32px 48px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.footer-logo { font-size: 16px; font-weight: 800; color: var(--gold); letter-spacing: 2px; }
+.footer-copy { font-size: 12px; color: var(--muted); }
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  #aurya, #negocios, #revista { padding: 64px 20px; }
+  .aurya-inner, .negocios-inner, .revista-inner { grid-template-columns: 1fr; gap: 40px; }
+  .aurya-phone { order: -1; }
+  .planes-grid { grid-template-columns: 1fr; max-width: 380px; }
+  .hero-stats { gap: 24px; }
+  #categorias, #como, #planes, #cta { padding: 64px 20px; }
+  .benefits-grid { grid-template-columns: 1fr; }
+}
+
+section { scroll-margin-top: 85px; }
+a:focus-visible { outline: 3px solid var(--gold2); outline-offset: 5px; }
+.contact-text a { color: inherit; overflow-wrap: anywhere; }
+.cat-card { cursor: default; }
+@media (max-width: 1100px) { .nav-links { gap: 14px; } nav { padding: 16px 20px; } }
+@media (max-width: 900px) { .nav-links { display: none; } }
+@media (max-width: 480px) {
+ .nav-logo { font-size: 16px; letter-spacing: 1px; }
+ .nav-cta { font-size: 10px; padding: 10px 12px; }
+ #hero { min-height: 740px; height: 100svh; }
+ .hero-content { padding-top: 30px; padding-bottom: 130px; }
+ .hero-stats { width: 100%; justify-content: center; gap: 18px; }
+ .stat-num { font-size: 26px; } .stat-label { font-size: 9px; letter-spacing: 1px; }
+ .cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+ .revista-mockup { max-width: 100%; } .contact-item { min-width: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">Grupo <span>Búzios</span></div>
+  <ul class="nav-links">
+    <li><a href="#aurya">Aurya IA</a></li>
+    <li><a href="#categorias">Descubrir</a></li>
+    <li><a href="#negocios">Para Negocios</a></li>
+    <li><a href="#planes">Planes</a></li>
+    <li><a href="#revista">Revista</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Quiero Sumarme</a>
+</nav>
+
+<!-- ── HERO ────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">✦ La revolución del turismo en Brasil ✦</div>
+    <h1 class="hero-title">
+      Bienvenido a<br>
+      <span class="gold">Búzios</span>
+    </h1>
+    <p class="hero-subtitle">
+      Aurya IA — tu compañero inteligente de viaje. Todo lo que necesitás en Búzios, en un solo lugar, en tiempo real.
+    </p>
+    <div class="hero-btns">
+      <a href="#aurya" class="btn-primary">Conocer Aurya IA →</a>
+      <a href="#negocios" class="btn-secondary">¿Tenés un negocio?</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Negocios adheridos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Asistencia IA</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">#1</div>
+      <div class="stat-label">App turismo Búzios</div>
+    </div>
+  </div>
+  <div class="scroll-hint">⌄</div>
+</section>
+
+<!-- ── AURYA IA ─────────────────────────────── -->
+<section id="aurya">
+  <div class="aurya-inner">
+    <div class="aurya-phone">
+      <div class="glow-ring"></div>
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-screen-overlay"></div>
+          <div class="chat-bubbles">
+            <div class="bubble aurya">
+              <div class="aurya-name">✦ AURYA IA</div>
+              ¡Hola! Soy Aurya, tu guía personal en Búzios. ¿Qué estás buscando hoy?
+            </div>
+            <div class="bubble user">Quiero una posada frente al mar 🌊</div>
+            <div class="bubble aurya">
+              <div class="aurya-name">✦ AURYA IA</div>
+              Encontré 3 posadas disponibles esta noche con vista al mar desde R$180. ¿Te muestro las mejores calificadas?
+            </div>
+            <div class="bubble user">¡Sí! Y que tenga cupón 🎉</div>
+            <div class="bubble aurya">
+              <div class="aurya-name">✦ AURYA IA</div>
+              ¡Perfecto! Pousada do Sol tiene 15% OFF por ser usuario Aurya ⭐
+            </div>
+          </div>
+        </div>
+        <div class="phone-bottom">
+          <div class="phone-input">Preguntale algo a Aurya...</div>
+          <div class="phone-send">➤</div>
+        </div>
+      </div>
+    </div>
+    <div class="aurya-text">
+      <div class="section-eyebrow">✦ Aurya IA</div>
+      <h2 class="section-title">Tu compañero de viaje<br><span class="gold">inteligente</span></h2>
+      <p class="section-desc">
+        No somos una simple aplicación. Aurya es la primera inteligencia artificial creada exclusivamente para Búzios — conoce cada rincón de la isla y está disponible las 24 horas para acompañarte.
+      </p>
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon">🏖️</div>
+          <div class="feature-text">
+            <h4>Recomendaciones en tiempo real</h4>
+            <p>Playas, clima, ocupación y valoraciones actualizadas al minuto.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎟️</div>
+          <div class="feature-text">
+            <h4>Cupones exclusivos</h4>
+            <p>Descuentos en restaurantes, posadas y actividades solo para usuarios Aurya.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-text">
+            <h4>Alertas inteligentes</h4>
+            <p>Te avisamos cuando tu lugar favorito tiene disponibilidad o una oferta nueva.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🌐</div>
+          <div class="feature-text">
+            <h4>Todo en un solo lugar</h4>
+            <p>Adiós a abrir 10 apps distintas — hospedaje, gastronomía, transporte y más.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CATEGORÍAS ───────────────────────────── -->
+<section id="categorias">
+  <div class="section-header">
+    <div class="section-eyebrow">✦ Descubrí Búzios</div>
+    <h2 class="section-title">Todo en <span class="gold">una sola app</span></h2>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card" style="grid-column: span 2;">
+      <div class="cat-bg" style="background-image: url('87ac0dc90649.jpg');"></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-icon">🏖️</div>
+        <div class="cat-name">Playas</div>
+        <div class="cat-count">23 playas · Clima en vivo</div>
+      </div>
+      <div class="cat-badge">NUEVO</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg" style="background-image: url('3fb5819a7fe7.jpg');"></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-icon">🍽️</div>
+        <div class="cat-name">Restaurantes</div>
+        <div class="cat-count">80+ locales</div>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg" style="background-image: url('0bb27d1d82cd.jpg');"></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-icon">⛵</div>
+        <div class="cat-name">Turismo</div>
+        <div class="cat-count">Tours · Buceo · Buggy</div>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg" style="background-image: url('5da22e97801c.jpg');"></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-icon">🌙</div>
+        <div class="cat-name">Vida Nocturna</div>
+        <div class="cat-count">Bares · Boliches</div>
+      </div>
+      <div class="cat-badge">🔥 HOT</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg" style="background-image: url('ddbe59345921.jpg');"></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-icon">🏨</div>
+        <div class="cat-name">Hospedaje</div>
+        <div class="cat-count">Posadas · Hoteles</div>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg" style="background: linear-gradient(135deg, #0A2540, #061020);"></div>
+      <div class="cat-overlay" style="background: rgba(0,0,0,0.3);"></div>
+      <div class="cat-content">
+        <div class="cat-icon">🚌</div>
+        <div class="cat-name">Transporte</div>
+        <div class="cat-count">Buggy · Transfer · Barco</div>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg" style="background: linear-gradient(135deg, #1A0A20, #0A0615);"></div>
+      <div class="cat-overlay" style="background: rgba(0,0,0,0.3);"></div>
+      <div class="cat-content">
+        <div class="cat-icon">👗</div>
+        <div class="cat-name">Moda</div>
+        <div class="cat-count">Shopping · Boutiques</div>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg" style="background: linear-gradient(135deg, #0A2010, #051008);"></div>
+      <div class="cat-overlay" style="background: rgba(0,0,0,0.3);"></div>
+      <div class="cat-content">
+        <div class="cat-icon">🏥</div>
+        <div class="cat-name">Salud</div>
+        <div class="cat-count">Clínicas · Farmacias</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CÓMO FUNCIONA ────────────────────────── -->
+<section id="como">
+  <div class="como-bg"></div>
+  <div class="como-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">✦ Simple y poderoso</div>
+      <h2 class="section-title">¿Cómo <span class="gold">funciona</span>?</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-icon">📖</div>
+        <h3>Recibís la Revista</h3>
+        <p>La encontrás en tu habitación o en los mejores lugares de Búzios.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-icon">📱</div>
+        <h3>Descargás la App</h3>
+        <p>Escaneás el QR y en segundos tenés a Aurya lista en tu teléfono.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-icon">🤖</div>
+        <h3>Aurya te guía</h3>
+        <p>Preguntale lo que quieras — responde en tiempo real con las mejores opciones.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-icon">🎟️</div>
+        <h3>Reservás con descuento</h3>
+        <p>Mostrás tu cupón Aurya y disfrutás beneficios exclusivos en cada lugar.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-icon">⭐</div>
+        <h3>Valorás tu experiencia</h3>
+        <p>Tu opinión ayuda a mejorar los negocios y beneficia a otros viajeros.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARA NEGOCIOS ────────────────────────── -->
+<section id="negocios">
+  <div class="negocios-inner">
+    <div class="negocio-img">
+      <img loading="lazy" decoding="async" src="3fb5819a7fe7.jpg" alt="Negocio Búzios">
+      <div class="img-badge">
+        <div class="img-badge-icon">📈</div>
+        <div class="img-badge-text">
+          <h4>+40% más clientes</h4>
+          <p>promedio entre negocios adheridos</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-eyebrow">✦ Para tu negocio</div>
+      <h2 class="section-title">Hacé crecer tu<br><span class="gold">negocio en Búzios</span></h2>
+      <p class="section-desc">
+        No somos solo publicidad. Somos el socio estratégico que cuida tu reputación, te manda clientes y hace crecer tu negocio mes a mes.
+      </p>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="b-icon">📲</div>
+          <h4>Portal propio</h4>
+          <p>Actualizá disponibilidad, fotos y cupones en tiempo real.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="b-icon">🔔</div>
+          <h4>Alertas instantáneas</h4>
+          <p>Recibís notificación cuando un turista te selecciona.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="b-icon">🎥</div>
+          <h4>Contenido profesional</h4>
+          <p>Nuestro equipo filma y fotografia tu local sin costo extra.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="b-icon">📊</div>
+          <h4>Análisis mensual</h4>
+          <p>Visitas al perfil, reservas generadas y ranking en la app.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="b-icon">🏆</div>
+          <h4>Sin comisiones ocultas</h4>
+          <p>Mensualidad fija, sin porcentaje por reserva como la competencia.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="b-icon">👥</div>
+          <h4>Consultores presenciales</h4>
+          <p>Visitamos tu negocio 2 veces al mes para asesorarte.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PLANES ───────────────────────────────── -->
+<section id="planes">
+  <div class="section-header">
+    <div class="section-eyebrow">✦ Invertí en tu negocio</div>
+    <h2 class="section-title">Elegí tu <span class="gold">plan</span></h2>
+    <p style="color: var(--muted); margin-top: 12px; font-size: 15px;">Adaptado a cada tipo de negocio · Sin impuestos ocultos · Precio a convenir</p>
+  </div>
+  <div class="planes-grid">
+    <div class="plan-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">A <span>consultar</span></div>
+      <p class="plan-desc">Ideal para pequeños emprendimientos que quieren estar en el mapa.</p>
+      <ul class="plan-features">
+        <li>Perfil en la app Aurya</li>
+        <li>Página en la revista digital</li>
+        <li>Cupones para turistas</li>
+        <li>Reseñas y calificaciones</li>
+        <li class="off">Portal de gestión propio</li>
+        <li class="off">Contenido audiovisual</li>
+        <li class="off">Consultores presenciales</li>
+      </ul>
+      <a href="#cta" class="btn-plan outline">Consultar precio</a>
+    </div>
+    <div class="plan-card featured">
+      <div class="plan-tag">⭐ MÁS ELEGIDO</div>
+      <div class="plan-name">Pro</div>
+      <div class="plan-price">A <span>consultar</span></div>
+      <p class="plan-desc">Para restaurantes, posadas y bares que quieren liderar su categoría.</p>
+      <ul class="plan-features">
+        <li>Perfil premium destacado</li>
+        <li>Página entera en la revista</li>
+        <li>Cupones ilimitados</li>
+        <li>Portal de gestión propio</li>
+        <li>Contenido audiovisual</li>
+        <li>Alertas de reservas en tiempo real</li>
+        <li class="off">Consultores presenciales</li>
+      </ul>
+      <a href="#cta" class="btn-plan gold">Consultar precio</a>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">Elite</div>
+      <div class="plan-price">A <span>consultar</span></div>
+      <p class="plan-desc">La experiencia completa para los líderes absolutos de Búzios.</p>
+      <ul class="plan-features">
+        <li>Posición #1 en su categoría</li>
+        <li>Tapa de la revista física</li>
+        <li>Cupones + posicionamiento pago</li>
+        <li>Portal full + analíticas</li>
+        <li>Contenido audiovisual premium</li>
+        <li>Alertas instantáneas</li>
+        <li>Consultores presenciales x2/mes</li>
+      </ul>
+      <a href="#cta" class="btn-plan outline">Consultar precio</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVISTA FÍSICA ────────────────────────── -->
+<section id="revista">
+  <div class="revista-bg"></div>
+  <div class="revista-inner">
+    <div>
+      <div class="section-eyebrow">✦ La guía física</div>
+      <h2 class="section-title">La revista que<br><span class="gold">llega primero</span></h2>
+      <p class="section-desc">
+        Cada turista que llega a Búzios la encuentra sobre su cama, en cada mesa de bar, en cada lobby de hotel. Miles de copias distribuidas estratégicamente — tu negocio, en las manos de quienes más importan.
+      </p>
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon">🛏️</div>
+          <div class="feature-text">
+            <h4>Distribución en habitaciones</h4>
+            <p>Sobre la cama de cada huésped — lo primero que ven al llegar.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📱</div>
+          <div class="feature-text">
+            <h4>QR que conecta con Aurya</h4>
+            <p>Un código en la portada lleva al turista directo a tu negocio.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📐</div>
+          <div class="feature-text">
+            <h4>Diferentes tamaños de aviso</h4>
+            <p>Tapa, página entera, media página — elegís según tu presupuesto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="revista-mockup">
+      <div class="mag-cover">
+        <div class="mag-cover-text">
+          <h3>GRUPO BÚZIOS</h3>
+          <p>La guía oficial de Búzios</p>
+        </div>
+      </div>
+      <div class="mag-inner">
+        <div class="mag-line gold"></div>
+        <div class="mag-line"></div>
+        <div class="mag-box"></div>
+        <div class="mag-line short"></div>
+        <div class="mag-line"></div>
+        <div class="mag-box"></div>
+        <div class="mag-line gold"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINAL ────────────────────────────── -->
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <h2 class="cta-title">
+      ¿Listo para ser parte de la<br><span class="gold">revolución de Búzios</span>?
+    </h2>
+    <p class="cta-desc">
+      Sumate a los primeros negocios adheridos y posicioná tu marca antes que la competencia. Los primeros cupos tienen condiciones especiales.
+    </p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="https://wa.me/541162394810" class="btn-primary" style="font-size:16px; padding:18px 44px;">Quiero sumarme ahora →</a>
+      <a href="#revista" class="btn-secondary" style="font-size:16px; padding:18px 44px;">Ver la Revista</a>
+    </div>
+    <div class="cta-contact">
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div class="contact-text"><strong>WhatsApp</strong><br><a href="https://wa.me/541162394810">+54 011 6239-4810</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-text"><strong>Email</strong><br><a href="mailto:jonatan_comparada@hotmail.com">jonatan_comparada@hotmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-text"><strong>Base</strong><br>Búzios, Rio de Janeiro · Brasil</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────── -->
+<footer>
+  <div class="footer-logo">GRUPO BÚZIOS · AURYA IA</div>
+  <div class="footer-copy">© 2026 Jonathan G. Comparada · Búzios, Brasil · Todos los derechos reservados</div>
+</footer>
+
+<script>
+// Animaciones al hacer scroll
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.step, .cat-card, .benefit-card, .plan-card, .feature-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+}
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 60) {
+    nav.style.background = 'rgba(8,12,20,0.97)';
+    nav.style.backdropFilter = 'blur(16px)';
+  } else {
+    nav.style.background = 'linear-gradient(to bottom, rgba(8,12,20,0.95) 0%, transparent 100%)';
+  }
+});
+</script>
+
+</body>
+</html>
